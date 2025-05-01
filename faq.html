@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Army Knowledge Offline - FAQ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="darkmode.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f8fa;
+      color: #1e1e1e;
+      margin: 0;
+      padding: 0;
+    }
+    .FAQ-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .FAQ-section {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .FAQ-title {
+      background-color: #ffc107;
+      padding: 15px;
+      font-size: 1.2em;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .FAQ-title:hover {
+      background-color: #e0a800;
+    }
+    .FAQ-content {
+      display: none;
+      padding: 20px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    .FAQ-title.active + .FAQ-content {
+      display: block;
+    }
+    .step-list li {
+      list-style: decimal inside;
+      margin-bottom: 10px;
+    }
+    .tip-box, .sticky-note, .knowledge-card {
+      background-color: #fff9c4;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+    .action-btn {
+      display: inline-block;
+      background: #ffc107;
+      color: #1e1e1e;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .action-btn:hover {
+      background: #e0a800;
+    }
+    .quick-nav {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-top: 4px solid #ffc107;
+    }
+    .quick-nav-links a {
+      display: inline-block;
+      margin-right: 10px;
+      background-color: #f5f8fa;
+      padding: 8px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #1e1e1e;
+      border: 1px solid #e1e8ed;
+    }
+    .quick-nav-links a:hover {
+      background-color: #ffc107;
+      border-color: #ffc107;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const titles = document.querySelectorAll('.FAQ-title');
+      titles.forEach(title => {
+        title.addEventListener('click', () => {
+          title.classList.toggle('active');
+          const content = title.nextElementSibling;
+          content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="FAQ-container">
+    <div class="quick-nav">
+      <div class="quick-nav-title">Jump to a section:</div>
+      <div class="quick-nav-links">
+        <a href="#ipps-a-par">IPPS-A PAR</a>
+        <a href="#soldier-talent-profile">Soldier Talent Profile</a>
+        <a href="#iperms">IPERMS Certificates</a>
+        <a href="#les">Leave Earnings Statement</a>
+        <a href="#metl">Mission Essential Task List</a>
+        <a href="#army-pubs">Army Publications</a>
+        <a href="#medpros">MEDPROS</a>
+        <a href="#post-map">Post Map</a>
+      </div>
+    </div>
+
+    <!-- Each FAQ block here -->
+    <div class="FAQ-section">
+      <div class="FAQ-title" id="ipps-a-par">1. How to fill out a PAR on IPPS-A</div>
+      <div class="FAQ-content">
+        <p>Log in to IPPS-A at <a href="https://hr.ippsa.army.mil" target="_blank">https://hr.ippsa.army.mil</a> and go to Self-Service > Personnel Actions. Click Create New Request, select the type, fill it out, and submit with supporting docs.</p>
+        <div class="sticky-note">Common issues include missing marriage certificates or wrong document format.</div>
+      </div>
+    </div>
+
+    <div class="FAQ-section">
+      <div class="FAQ-title" id="soldier-talent-profile">2. How to read your Soldier Talent Profile on IPPS-A</div>
+      <div class="FAQ-content">
+        <p>Access via Self-Service > My Profile or directly at <a href="https://hr.ippsa.army.mil/bi/stp/self" target="_blank">Soldier Talent Profile</a>. Review sections for education, assignments, performance, and personal data.</p>
+      </div>
+    </div>
+
+    <div class="FAQ-section">
+      <div class="FAQ-title" id="iperms">3. How to find certificates in IPERMS</div>
+      <div class="FAQ-content">
+        <p>From IPPS-A dashboard, click IPERMS. Go to "My Record" > "Training/Education". Or access directly: <a href="https://iperms.hrc.army.mil" target="_blank">iperms.hrc.army.mil</a>.</p>
+      </div>
+    </div>
+
+    <div class="FAQ-section">
+      <div class="FAQ-title" id="les">4. How to read your Leave Earnings Statement (LES)</div>
+      <div class="FAQ-content">
+        <p>Log into <a href="https://mypay.dfas.mil" target="_blank">myPay</a> and select LES. Review entitlements, deductions, leave balance, and net pay.</p>
+      </div>
+    </div>
+
+    <div class="FAQ-section">
+      <div class="FAQ-title" id="metl">5. How to find your unit’s METL on ATN/CATS</div>
+      <div class="FAQ-content">
+        <p>Visit <a href="https://atn.army.mil" target="_blank">atn.army.mil</a>, log in, go to CATS > Unit METL > Search by unit type or UIC. View assigned METL tasks and T&EOs.</p>
+      </div>
+    </div>
+
+    <div class="FAQ-section">
+      <div class="FAQ-title" id="army-pubs">6. Accessing Army Publications</div>
+      <div class="FAQ-content">
+        <p>Go to <a href="https://armypubs.army.mil" target="_blank">Army Publications</a> and search for ARs, DAPAMs, FMs, ATMs, and DA Forms like DA 31.</p>
+      </div>
+    </div>
+
+    <div class="FAQ-section">
+      <div class="FAQ-title" id="medpros">7. How to check appointments and results on MEDPROS</div>
+      <div class="FAQ-content">
+        <p>Log in to MEDPROS via <a href="https://medpros.mods.army.mil" target="_blank">https://medpros.mods.army.mil</a> and select "My Medical Readiness Status". You can see labs, PHA, and dental results.</p>
+      </div>
+    </div>
+
+    <div class="FAQ-section">
+      <div class="FAQ-title" id="post-map">8. Post Map of Essential Locations</div>
+      <div class="FAQ-content">
+        <p>This will include visual maps (coming soon) of the hospital, Soldier Support Center, child care, schools, and housing offices. Recommend using your garrison map or digital base guide app for now.</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
