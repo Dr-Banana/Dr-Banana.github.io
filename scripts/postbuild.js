@@ -19,11 +19,20 @@ function copyRecursive(src, dest) {
   }
 }
 
+function touchNoJekyll(dir) {
+  const nojekyll = path.join(dir, '.nojekyll');
+  try { fs.writeFileSync(nojekyll, ''); } catch {}
+}
+
 function main() {
   if (!fs.existsSync(buildDir)) {
     console.error('build directory not found. Please run npm run build first.');
     process.exit(1);
   }
+
+  // ensure .nojekyll in build output for GitHub Pages
+  touchNoJekyll(buildDir);
+
   if (!fs.existsSync(docsDir)) fs.mkdirSync(docsDir, { recursive: true });
 
   // copy build -> docs
@@ -38,7 +47,10 @@ function main() {
     }
   }
 
-  console.log('Copied build to docs with 404.html and CNAME.');
+  // ensure .nojekyll in docs as well
+  touchNoJekyll(docsDir);
+
+  console.log('Copied build to docs with 404.html, CNAME and .nojekyll.');
 }
 
 main(); 
